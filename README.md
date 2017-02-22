@@ -120,4 +120,41 @@ This is used to build topological data structures, with a kind of inside-out ver
 
 There is a record here of some of the thinking that led to unjoin: <https://github.com/r-gris/babelfish>
 
+The function `unjoin` replaces the method here: <http://rpubs.com/cyclemumner/iout_nest>
+
+``` r
+(d2 <- iris %>% unjoin(-Species, -Petal.Width))
+#> $main
+#> # A tibble: 144 × 4
+#>    Sepal.Length Sepal.Width Petal.Length .idx0
+#>           <dbl>       <dbl>        <dbl> <int>
+#> 1           5.1         3.5          1.4    34
+#> 2           4.9         3.0          1.4    18
+#> 3           4.7         3.2          1.3    10
+#> 4           4.6         3.1          1.5     6
+#> 5           5.0         3.6          1.4    30
+#> 6           5.4         3.9          1.7    49
+#> 7           4.6         3.4          1.4     8
+#> 8           5.0         3.4          1.5    26
+#> 9           4.4         2.9          1.4     2
+#> 10          4.9         3.1          1.5    19
+#> # ... with 134 more rows
+#> 
+#> $data
+#> # A tibble: 150 × 3
+#>    Petal.Width Species .idx0
+#>          <dbl>  <fctr> <int>
+#> 1          0.2  setosa    34
+#> 2          0.2  setosa    18
+#> 3          0.2  setosa    10
+#> 4          0.2  setosa     6
+#> 5          0.2  setosa    30
+#> 6          0.4  setosa    49
+#> 7          0.3  setosa     8
+#> 8          0.2  setosa    26
+#> 9          0.2  setosa     2
+#> 10         0.1  setosa    19
+#> # ... with 140 more rows
+```
+
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

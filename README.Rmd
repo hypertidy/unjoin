@@ -46,6 +46,12 @@ kind of inside-out version of a nested data frame. Whether it's of broader use i
 
 There is a record here of some of  the thinking that led to unjoin: https://github.com/r-gris/babelfish
 
+The function `unjoin` replaces the method here: http://rpubs.com/cyclemumner/iout_nest
+
+```{r}
+(d2 <- iris %>% unjoin(-Species, -Petal.Width))
+```
+
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
