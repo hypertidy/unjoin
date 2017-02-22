@@ -44,6 +44,7 @@ iris %>% unjoin(Species, Petal.Width)
 This is used to build topological data structures, with a
 kind of inside-out version of a nested data frame. Whether it's of broader use is unclear. 
 
+There is a record here of some of  the thinking that led to unjoin: https://github.com/r-gris/babelfish
 
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
