@@ -1,7 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-unjoin
-======
+[![Travis-CI Build Status](https://travis-ci.org/mdsumner/unjoin.svg?branch=master)](https://travis-ci.org/mdsumner/unjoin) \# unjoin
 
 The goal of unjoin is to provide `unjoin` for data frames. This is used to build topological data structures, with a kind of inside-out version of a nested data frame. Whether it's of broader use is an open question.
 
