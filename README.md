@@ -1,8 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/mdsumner/unjoin.svg?branch=master)](https://travis-ci.org/mdsumner/unjoin) \# unjoin
+[![Travis-CI Build Status](https://travis-ci.org/mdsumner/unjoin.svg?branch=master)](https://travis-ci.org/mdsumner/unjoin)
 
-The goal of unjoin is to provide `unjoin` for data frames. This is used to build topological data structures, with a kind of inside-out version of a nested data frame. Whether it's of broader use is an open question.
+unjoin
+======
+
+The goal of unjoin is to provide `unjoin` for data frames.
 
 Installation
 ------------
@@ -112,3 +115,7 @@ iris %>% unjoin(Species, Petal.Width)
 #> 10          4.9         3.1          1.5     1
 #> # ... with 140 more rows
 ```
+
+This is used to build topological data structures, with a kind of inside-out version of a nested data frame. Whether it's of broader use is unclear.
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

@@ -12,10 +12,10 @@ knitr::opts_chunk$set(
 )
 ```
 [![Travis-CI Build Status](https://travis-ci.org/mdsumner/unjoin.svg?branch=master)](https://travis-ci.org/mdsumner/unjoin)
+
 # unjoin
 
-The goal of unjoin is to provide `unjoin` for data frames. This is used to build topological data structures, with a
-kind of inside-out version of a nested data frame. Whether it's of broader use is an open question. 
+The goal of unjoin is to provide `unjoin` for data frames. 
 
 ## Installation
 
@@ -41,5 +41,10 @@ iris %>% unjoin(Species)
 iris %>% unjoin(Species, Petal.Width)
 ```
 
+This is used to build topological data structures, with a
+kind of inside-out version of a nested data frame. Whether it's of broader use is unclear. 
 
+
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
