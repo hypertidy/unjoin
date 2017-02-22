@@ -1,6 +1,6 @@
 #' Split a table into two removing repeated values.
 #'
-#' This is a subset of the tasks done by `tidyr::nest`.
+#' This is a subset of the tasks done by \code{\link[tidyr]{nest}}.
 #' @seealso `dplyr::inner_join` for the inverse operation.
 #' @seealso `tidyr::nest` for the complementary operation resulting in one data frame
 #' @inheritParams unjoin_
@@ -34,7 +34,7 @@ unjoin <- function(data, ..., key_col = ".idx0") {
   unjoin_(data, unjoin_cols, key_col)
 }
 
-#' Standard-evaluation version of `unjoin`.
+#' Standard-evaluation version of 'unjoin'.
 #'
 #' This is a S3 generic.
 #'

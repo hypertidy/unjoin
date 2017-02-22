@@ -2,7 +2,7 @@
 % Please edit documentation in R/unjoin.r
 \name{unjoin_}
 \alias{unjoin_}
-\title{Standard-evaluation version of `unjoin`.}
+\title{Standard-evaluation version of 'unjoin'.}
 \usage{
 unjoin_(data, unjoin_cols = character(), key_col = ".idx0")
 }

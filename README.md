@@ -113,14 +113,3 @@ iris %>% unjoin(Species, Petal.Width)
 #> 10          4.9         3.1          1.5     1
 #> # ... with 140 more rows
 ```
-
-``` r
-uj_q <- unjoin(quakes,  long, lat, depth)
-
-library(dplyr)
-## what is uj_q?  (it's a MULTIPOINT structure)
-g <- sf::st_sfc(uj_q$main %>% split(.$.idx0) %>% 
-  purrr::map(function(x) sf::st_multipoint(as.matrix(inner_join(x, uj_q$data[, ".idx0"], ".idx0") %>% dplyr::select(-.idx0)))), 
-  crs = 4326)
-sfd <- sf::st_sf(uj_q$data, geometry = g)
-```

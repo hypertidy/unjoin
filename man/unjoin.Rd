@@ -16,7 +16,7 @@ Select all variables between x and z with \code{x:z}, exclude y with
 \item{key_col}{The name of the new column to key the two output data frames.}
 }
 \description{
-This is a subset of the tasks done by `tidyr::nest`.
+This is a subset of the tasks done by \code{\link[tidyr]{nest}}.
 }
 \examples{
 library(dplyr)
