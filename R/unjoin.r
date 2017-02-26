@@ -1,9 +1,10 @@
-#' Split a table into two removing repeated values.
+#' Split a table in two and remove repeated values.
 #'
 #' This is a subset of the tasks done by \code{\link[tidyr]{nest}}.
 #' @seealso `dplyr::inner_join` for the inverse operation.
 #' @seealso `tidyr::nest` for the complementary operation resulting in one data frame
 #' @inheritParams unjoin_
+#' @name unjoin
 #' @param ... Specification of columns to nest. Use bare variable names.
 #'   Select all variables between x and z with \code{x:z}, exclude y with
 #'   \code{-y}. For more options, see the \link[dplyr]{select} documentation.
@@ -27,8 +28,6 @@
 #'   unjoin(gapminder)
 #' }
 #' unjoin(iris, Petal.Width)
-
-
 unjoin <- function(data, ..., key_col = ".idx0") {
   unjoin_cols <- unname(dplyr::select_vars(colnames(data), ...))
   unjoin_(data, unjoin_cols, key_col = key_col)
@@ -43,6 +42,7 @@ unjoin <- function(data, ..., key_col = ".idx0") {
 #' @param key_col The name of the new column to key the two output data frames.
 #' @keywords internal
 #' @export
+#' @name unjoin_
 unjoin_ <- function(data, unjoin_cols = character(), key_col = ".idx0") {
   UseMethod("unjoin_")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/unjoin.r
 \name{unjoin}
 \alias{unjoin}
-\title{Split a table into two removing repeated values.}
+\title{Split a table in two and remove repeated values.}
 \usage{
 unjoin(data, ..., key_col = ".idx0")
 }

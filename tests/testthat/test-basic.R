@@ -31,6 +31,6 @@ test_that("key col works", {
 
   expect_that(sum(".idx0" == unlist(lnames)), equals(2L))
 
-  expect_that(sum("banana" == unlist(lnames)), equals(2L))
+  expect_that(sum("banana" == unlist(bnames)), equals(2L))
 
 })
