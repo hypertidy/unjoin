@@ -5,7 +5,10 @@
 unjoin
 ======
 
-The goal of unjoin is to provide `unjoin` for data frames.
+The goal of unjoin is to provide `unjoin` for data frames. This is exactly part of what `tidyr::nest` does, but with two differences:
+
+-   the split data frames are not nested, they are split and returned as two whole tibbles `main` and `data`
+-   there is an explicit key column added to identify the de-duplicated rows in `main` with the rows in `data`.
 
 Installation
 ------------
