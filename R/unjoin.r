@@ -31,7 +31,7 @@
 
 unjoin <- function(data, ..., key_col = ".idx0") {
   unjoin_cols <- unname(dplyr::select_vars(colnames(data), ...))
-  unjoin_(data, unjoin_cols, key_col)
+  unjoin_(data, unjoin_cols, key_col = key_col)
 }
 
 #' Standard-evaluation version of 'unjoin'.
@@ -50,7 +50,7 @@ unjoin_ <- function(data, unjoin_cols = character(), key_col = ".idx0") {
 #' @export
 unjoin_.data.frame <- function(data,  unjoin_cols = character(), key_col = ".idx0") {
   group_cols <- setdiff(names(data), unjoin_cols)
-  unjoin_impl(dplyr::as_data_frame(data), group_cols, unjoin_cols, key_col = ".idx0")
+  unjoin_impl(dplyr::as_data_frame(data), group_cols, unjoin_cols, key_col = key_col)
 }
 
 #' #' @export

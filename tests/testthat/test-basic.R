@@ -23,3 +23,14 @@ test_that("unjoin works", {
   x$data %>% inner_join(x$main) %>% expect_named(c("Sepal.Length", "Sepal.Width", "Petal.Length", "Species", ".idx0",
                                                    "Petal.Width"))
 })
+
+
+test_that("key col works", {
+  lnames <- lapply(unjoin(iris), names)
+  bnames <- lapply(unjoin(iris, key_col = "banana"),  names)
+
+  expect_that(sum(".idx0" == unlist(lnames)), equals(2L))
+
+  expect_that(sum("banana" == unlist(lnames)), equals(2L))
+
+})
