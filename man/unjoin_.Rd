@@ -9,11 +9,17 @@ unjoin_(data, unjoin_cols = character(), key_col = ".idx0")
 \arguments{
 \item{data}{A data frame.}
 
-\item{unjoin_cols}{Character vector of columns to nest.}
+\item{unjoin_cols}{Character vector of columns to unjoin.}
 
 \item{key_col}{The name of the new column to key the two output data frames.}
 }
 \description{
-This is a S3 generic.
+This is a S3 generic. The data frame on input is treated as "data", the new data frame is treated
+as the normalized key. This means that the split-off and de-duplicated table has the name given via
+the `key_col` argument (defaults to ".idx0") and shares this name with the common key.
+}
+\details{
+It's not yet clear if this flexibility around naming is a good idea, but it enables a simple scheme for chaining
+unjoins, though you'd better not use the same `key_col` again.
 }
 \keyword{internal}

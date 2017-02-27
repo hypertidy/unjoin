@@ -5,3 +5,4 @@
 ^README-.*\.png$
 ^CONDUCT\.md$
 ^codecov\.yml$
+^docs$

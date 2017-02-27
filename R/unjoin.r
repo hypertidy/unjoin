@@ -13,7 +13,7 @@
 #' library(dplyr)
 #' data("Seatbelts", package= "datasets")
 #' x <- unjoin(as.data.frame(Seatbelts), front, rear, kms)
-#' all.equal(inner_join(x$main, x$data) %>% select(-.idx0), as.data.frame(Seatbelts))
+#' all.equal(inner_join(x$.idx0, x$data) %>% select(-.idx0), as.data.frame(Seatbelts))
 #'
 #' iris %>% unjoin(-Species)
 #' chickwts %>% unjoin(weight)
@@ -28,17 +28,39 @@
 #'   unjoin(gapminder)
 #' }
 #' unjoin(iris, Petal.Width)
-unjoin <- function(data, ..., key_col = ".idx0") {
+unjoin <- function(data, ...) {
+  UseMethod("unjoin")
+}
+
+#' @name unjoin
+#' @export
+unjoin.unjoin <- function(data, ..., key_col = ".idx0") {
+  in_name <- setdiff(names(data), "data")
+  ## assume we get the output of unjoin (should be classed)
+  uj <- unjoin(data[["data"]], ..., key_col = key_col)
+  data[[key_col]] <- uj[[key_col]]
+  data[["data"]] <- uj[["data"]]
+  structure(data[c(in_name, key_col, "data")], class = "unjoin")
+}
+#' @name unjoin
+#' @export
+unjoin.data.frame <- function(data, ..., key_col = ".idx0") {
   unjoin_cols <- unname(dplyr::select_vars(colnames(data), ...))
   unjoin_(data, unjoin_cols, key_col = key_col)
 }
 
 #' Standard-evaluation version of 'unjoin'.
 #'
-#' This is a S3 generic.
+#' This is a S3 generic. The data frame on input is treated as "data", the new data frame is treated
+#' as the normalized key. This means that the split-off and de-duplicated table has the name given via
+#' the `key_col` argument (defaults to ".idx0") and shares this name with the common key.
+#'
+#' It's not yet clear if this flexibility around naming is a good idea, but it enables a simple scheme for chaining
+#' unjoins, though you'd better not use the same `key_col` again.
+#'
 #'
 #' @param data A data frame.
-#' @param unjoin_cols Character vector of columns to nest.
+#' @param unjoin_cols Character vector of columns to unjoin.
 #' @param key_col The name of the new column to key the two output data frames.
 #' @keywords internal
 #' @export
@@ -92,8 +114,9 @@ unjoin_impl <- function(data, group_cols, unjoin_cols, key_col = ".idx0") {
   data <- data[group_cols]
   data[[key_col]] <- idx
 
-  list(main = out, data = data)
+  structure(setNames(list(out,data), c(key_col, "data")), class = "unjoin")
 }
+
 
 
 

@@ -55,6 +55,14 @@ The function `unjoin` replaces the method here: http://rpubs.com/cyclemumner/iou
 (d2 <- iris %>% unjoin(-Species, -Petal.Width))
 ```
 
+We can chain unjoins together, but make sure not to repeat a `key_col` in one of these. 
+
+```{r}
+unjoin(iris, Species, key_col = "vertex") %>% unjoin(Petal.Width, vertex,  key_col = "branch")
+```
+
+Also, there's no escape hatch here, you can't "unjoin" your way to normal nirvana, each unjoin needs to carry the last unjoin-key with it, and you just end up with the big link table with no attributes. It needs some kind of group-semantic to cut the chain. 
+
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 

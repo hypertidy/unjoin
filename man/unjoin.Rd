@@ -2,9 +2,17 @@
 % Please edit documentation in R/unjoin.r
 \name{unjoin}
 \alias{unjoin}
+\alias{unjoin}
+\alias{unjoin.unjoin}
+\alias{unjoin}
+\alias{unjoin.data.frame}
 \title{Split a table in two and remove repeated values.}
 \usage{
-unjoin(data, ..., key_col = ".idx0")
+unjoin(data, ...)
+
+\method{unjoin}{unjoin}(data, ..., key_col = ".idx0")
+
+\method{unjoin}{data.frame}(data, ..., key_col = ".idx0")
 }
 \arguments{
 \item{data}{A data frame.}
@@ -22,7 +30,7 @@ This is a subset of the tasks done by \code{\link[tidyr]{nest}}.
 library(dplyr)
 data("Seatbelts", package= "datasets")
 x <- unjoin(as.data.frame(Seatbelts), front, rear, kms)
-all.equal(inner_join(x$main, x$data) \%>\% select(-.idx0), as.data.frame(Seatbelts))
+all.equal(inner_join(x$.idx0, x$data) \%>\% select(-.idx0), as.data.frame(Seatbelts))
 
 iris \%>\% unjoin(-Species)
 chickwts \%>\% unjoin(weight)
