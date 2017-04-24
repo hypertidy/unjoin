@@ -17,10 +17,6 @@ unjoin(data, ...)
 \arguments{
 \item{data}{A data frame.}
 
-\item{...}{Specification of columns to nest. Use bare variable names.
-Select all variables between x and z with \code{x:z}, exclude y with
-\code{-y}. For more options, see the \link[dplyr]{select} documentation.}
-
 \item{key_col}{The name of the new column to key the two output data frames.}
 }
 \description{

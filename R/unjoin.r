@@ -5,9 +5,6 @@
 #' @seealso `tidyr::nest` for the complementary operation resulting in one data frame
 #' @inheritParams unjoin_
 #' @name unjoin
-#' @param ... Specification of columns to nest. Use bare variable names.
-#'   Select all variables between x and z with \code{x:z}, exclude y with
-#'   \code{-y}. For more options, see the \link[dplyr]{select} documentation.
 #' @export
 #' @examples
 #' library(dplyr)
