@@ -16,6 +16,7 @@
 #' @name unjoin
 #' @importFrom dplyr %>% distinct group_by select ungroup
 #' @importFrom tibble as_tibble
+#' @importFrom rlang syms
 #' @importFrom stats setNames
 #' @export
 #' @examples
