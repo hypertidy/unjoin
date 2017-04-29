@@ -6,3 +6,4 @@
 ^CONDUCT\.md$
 ^codecov\.yml$
 ^docs$
+^appveyor\.yml$
