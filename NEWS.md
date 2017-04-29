@@ -1,4 +1,8 @@
-# unjoin dev
+# unjoin 0.0.2 
+
+* modify to use dplyr/rlang 
+
+# unjoin 0.0.1
 
 * first version of class "unjoin" and chaining
 

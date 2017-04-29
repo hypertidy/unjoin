@@ -55,6 +55,14 @@ unjoin(iris)
 #> [1] "unjoin"
 
 library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 iris %>% unjoin(Species)
 #> $.idx0
 #> # A tibble: 3 × 2
@@ -127,37 +135,37 @@ There is a record here of some of the thinking that led to unjoin: <https://gith
 The function `unjoin` replaces the method here: <http://rpubs.com/cyclemumner/iout_nest>
 
 ``` r
-(d2 <- iris %>% unjoin(-Species, -Petal.Width))
+(d2 <- iris %>% unjoin(Species, Petal.Width))
 #> $.idx0
-#> # A tibble: 144 × 4
-#>    Sepal.Length Sepal.Width Petal.Length .idx0
-#>           <dbl>       <dbl>        <dbl> <int>
-#> 1           5.1         3.5          1.4    34
-#> 2           4.9         3.0          1.4    18
-#> 3           4.7         3.2          1.3    10
-#> 4           4.6         3.1          1.5     6
-#> 5           5.0         3.6          1.4    30
-#> 6           5.4         3.9          1.7    49
-#> 7           4.6         3.4          1.4     8
-#> 8           5.0         3.4          1.5    26
-#> 9           4.4         2.9          1.4     2
-#> 10          4.9         3.1          1.5    19
-#> # ... with 134 more rows
+#> # A tibble: 27 × 3
+#>       Species Petal.Width .idx0
+#>        <fctr>       <dbl> <int>
+#> 1      setosa         0.2     2
+#> 2      setosa         0.4     4
+#> 3      setosa         0.3     3
+#> 4      setosa         0.1     1
+#> 5      setosa         0.5     5
+#> 6      setosa         0.6     6
+#> 7  versicolor         1.4    11
+#> 8  versicolor         1.5    12
+#> 9  versicolor         1.3    10
+#> 10 versicolor         1.6    13
+#> # ... with 17 more rows
 #> 
 #> $data
-#> # A tibble: 150 × 3
-#>    Petal.Width Species .idx0
-#>          <dbl>  <fctr> <int>
-#> 1          0.2  setosa    34
-#> 2          0.2  setosa    18
-#> 3          0.2  setosa    10
-#> 4          0.2  setosa     6
-#> 5          0.2  setosa    30
-#> 6          0.4  setosa    49
-#> 7          0.3  setosa     8
-#> 8          0.2  setosa    26
-#> 9          0.2  setosa     2
-#> 10         0.1  setosa    19
+#> # A tibble: 150 × 4
+#>    Sepal.Length Sepal.Width Petal.Length .idx0
+#>           <dbl>       <dbl>        <dbl> <int>
+#> 1           5.1         3.5          1.4     2
+#> 2           4.9         3.0          1.4     2
+#> 3           4.7         3.2          1.3     2
+#> 4           4.6         3.1          1.5     2
+#> 5           5.0         3.6          1.4     2
+#> 6           5.4         3.9          1.7     4
+#> 7           4.6         3.4          1.4     3
+#> 8           5.0         3.4          1.5     2
+#> 9           4.4         2.9          1.4     2
+#> 10          4.9         3.1          1.5     1
 #> # ... with 140 more rows
 #> 
 #> attr(,"class")
