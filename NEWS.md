@@ -1,3 +1,7 @@
+# unjoin dev
+
+* restore unjoin_ for se
+
 # unjoin 0.0.2 
 
 * modify to use dplyr/rlang 
