@@ -37,3 +37,8 @@ test_that("key col works", {
   expect_that(sum("banana" == unlist(bnames)), equals(2L))
 
 })
+
+
+test_that("nse-compat works", {
+   expect_named(unjoin_(iris, "Sepal.Length"), c(".idx0", "data"))
+})
