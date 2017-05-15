@@ -2,8 +2,8 @@ Package: unjoin
 Title: Unjoin Data Frames 
 Version: 0.0.2.9001
 Authors@R: c(person("Michael D.","Sumner", role = c("aut", "cre"), email = "mdsumner@gmail.com"), 
-             as.person("Simon Wotherspoon <Simon.Wotherspoon@utas.edu.au> [ctb]"),
-             person("Hadley", "Wickham", ,, "ctb", comment = "named the concept, provided excellent guidance via tidyr source code"))
+             person("Simon", "Wotherspoon", role = "ctb"),
+             person("Hadley", "Wickham", role = "ctb", comment = "named the concept, provided excellent guidance via tidyr source code"))
 Description: Splits a data frame in two based on key columns. The function 'unjoin' is an inside-out version of a nested data frame.  
 Depends: R (>= 3.3.2)
 License: GPL-3
