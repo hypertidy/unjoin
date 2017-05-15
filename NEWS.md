@@ -1,6 +1,8 @@
-# unjoin dev
+# unjoin 0.0.3
 
 * restore unjoin_ for se
+
+* new tests
 
 # unjoin 0.0.2 
 

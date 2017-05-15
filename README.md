@@ -30,24 +30,24 @@ library(unjoin)
 
 unjoin(iris)
 #> $.idx0
-#> # A tibble: 1 × 1
+#> # A tibble: 1 x 1
 #>   .idx0
 #>   <int>
 #> 1     1
 #> 
 #> $data
-#> # A tibble: 150 × 6
+#> # A tibble: 150 x 6
 #>    Sepal.Length Sepal.Width Petal.Length Petal.Width Species .idx0
 #>           <dbl>       <dbl>        <dbl>       <dbl>  <fctr> <int>
-#> 1           5.1         3.5          1.4         0.2  setosa     1
-#> 2           4.9         3.0          1.4         0.2  setosa     1
-#> 3           4.7         3.2          1.3         0.2  setosa     1
-#> 4           4.6         3.1          1.5         0.2  setosa     1
-#> 5           5.0         3.6          1.4         0.2  setosa     1
-#> 6           5.4         3.9          1.7         0.4  setosa     1
-#> 7           4.6         3.4          1.4         0.3  setosa     1
-#> 8           5.0         3.4          1.5         0.2  setosa     1
-#> 9           4.4         2.9          1.4         0.2  setosa     1
+#>  1          5.1         3.5          1.4         0.2  setosa     1
+#>  2          4.9         3.0          1.4         0.2  setosa     1
+#>  3          4.7         3.2          1.3         0.2  setosa     1
+#>  4          4.6         3.1          1.5         0.2  setosa     1
+#>  5          5.0         3.6          1.4         0.2  setosa     1
+#>  6          5.4         3.9          1.7         0.4  setosa     1
+#>  7          4.6         3.4          1.4         0.3  setosa     1
+#>  8          5.0         3.4          1.5         0.2  setosa     1
+#>  9          4.4         2.9          1.4         0.2  setosa     1
 #> 10          4.9         3.1          1.5         0.1  setosa     1
 #> # ... with 140 more rows
 #> 
@@ -65,7 +65,7 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 iris %>% unjoin(Species)
 #> $.idx0
-#> # A tibble: 3 × 2
+#> # A tibble: 3 x 2
 #>      Species .idx0
 #>       <fctr> <int>
 #> 1     setosa     1
@@ -73,18 +73,18 @@ iris %>% unjoin(Species)
 #> 3  virginica     3
 #> 
 #> $data
-#> # A tibble: 150 × 5
+#> # A tibble: 150 x 5
 #>    Sepal.Length Sepal.Width Petal.Length Petal.Width .idx0
 #>           <dbl>       <dbl>        <dbl>       <dbl> <int>
-#> 1           5.1         3.5          1.4         0.2     1
-#> 2           4.9         3.0          1.4         0.2     1
-#> 3           4.7         3.2          1.3         0.2     1
-#> 4           4.6         3.1          1.5         0.2     1
-#> 5           5.0         3.6          1.4         0.2     1
-#> 6           5.4         3.9          1.7         0.4     1
-#> 7           4.6         3.4          1.4         0.3     1
-#> 8           5.0         3.4          1.5         0.2     1
-#> 9           4.4         2.9          1.4         0.2     1
+#>  1          5.1         3.5          1.4         0.2     1
+#>  2          4.9         3.0          1.4         0.2     1
+#>  3          4.7         3.2          1.3         0.2     1
+#>  4          4.6         3.1          1.5         0.2     1
+#>  5          5.0         3.6          1.4         0.2     1
+#>  6          5.4         3.9          1.7         0.4     1
+#>  7          4.6         3.4          1.4         0.3     1
+#>  8          5.0         3.4          1.5         0.2     1
+#>  9          4.4         2.9          1.4         0.2     1
 #> 10          4.9         3.1          1.5         0.1     1
 #> # ... with 140 more rows
 #> 
@@ -93,34 +93,34 @@ iris %>% unjoin(Species)
 
 iris %>% unjoin(Species, Petal.Width)
 #> $.idx0
-#> # A tibble: 27 × 3
+#> # A tibble: 27 x 3
 #>       Species Petal.Width .idx0
 #>        <fctr>       <dbl> <int>
-#> 1      setosa         0.2     2
-#> 2      setosa         0.4     4
-#> 3      setosa         0.3     3
-#> 4      setosa         0.1     1
-#> 5      setosa         0.5     5
-#> 6      setosa         0.6     6
-#> 7  versicolor         1.4    11
-#> 8  versicolor         1.5    12
-#> 9  versicolor         1.3    10
+#>  1     setosa         0.2     2
+#>  2     setosa         0.4     4
+#>  3     setosa         0.3     3
+#>  4     setosa         0.1     1
+#>  5     setosa         0.5     5
+#>  6     setosa         0.6     6
+#>  7 versicolor         1.4    11
+#>  8 versicolor         1.5    12
+#>  9 versicolor         1.3    10
 #> 10 versicolor         1.6    13
 #> # ... with 17 more rows
 #> 
 #> $data
-#> # A tibble: 150 × 4
+#> # A tibble: 150 x 4
 #>    Sepal.Length Sepal.Width Petal.Length .idx0
 #>           <dbl>       <dbl>        <dbl> <int>
-#> 1           5.1         3.5          1.4     2
-#> 2           4.9         3.0          1.4     2
-#> 3           4.7         3.2          1.3     2
-#> 4           4.6         3.1          1.5     2
-#> 5           5.0         3.6          1.4     2
-#> 6           5.4         3.9          1.7     4
-#> 7           4.6         3.4          1.4     3
-#> 8           5.0         3.4          1.5     2
-#> 9           4.4         2.9          1.4     2
+#>  1          5.1         3.5          1.4     2
+#>  2          4.9         3.0          1.4     2
+#>  3          4.7         3.2          1.3     2
+#>  4          4.6         3.1          1.5     2
+#>  5          5.0         3.6          1.4     2
+#>  6          5.4         3.9          1.7     4
+#>  7          4.6         3.4          1.4     3
+#>  8          5.0         3.4          1.5     2
+#>  9          4.4         2.9          1.4     2
 #> 10          4.9         3.1          1.5     1
 #> # ... with 140 more rows
 #> 
@@ -137,34 +137,34 @@ The function `unjoin` replaces the method here: <http://rpubs.com/cyclemumner/io
 ``` r
 (d2 <- iris %>% unjoin(Species, Petal.Width))
 #> $.idx0
-#> # A tibble: 27 × 3
+#> # A tibble: 27 x 3
 #>       Species Petal.Width .idx0
 #>        <fctr>       <dbl> <int>
-#> 1      setosa         0.2     2
-#> 2      setosa         0.4     4
-#> 3      setosa         0.3     3
-#> 4      setosa         0.1     1
-#> 5      setosa         0.5     5
-#> 6      setosa         0.6     6
-#> 7  versicolor         1.4    11
-#> 8  versicolor         1.5    12
-#> 9  versicolor         1.3    10
+#>  1     setosa         0.2     2
+#>  2     setosa         0.4     4
+#>  3     setosa         0.3     3
+#>  4     setosa         0.1     1
+#>  5     setosa         0.5     5
+#>  6     setosa         0.6     6
+#>  7 versicolor         1.4    11
+#>  8 versicolor         1.5    12
+#>  9 versicolor         1.3    10
 #> 10 versicolor         1.6    13
 #> # ... with 17 more rows
 #> 
 #> $data
-#> # A tibble: 150 × 4
+#> # A tibble: 150 x 4
 #>    Sepal.Length Sepal.Width Petal.Length .idx0
 #>           <dbl>       <dbl>        <dbl> <int>
-#> 1           5.1         3.5          1.4     2
-#> 2           4.9         3.0          1.4     2
-#> 3           4.7         3.2          1.3     2
-#> 4           4.6         3.1          1.5     2
-#> 5           5.0         3.6          1.4     2
-#> 6           5.4         3.9          1.7     4
-#> 7           4.6         3.4          1.4     3
-#> 8           5.0         3.4          1.5     2
-#> 9           4.4         2.9          1.4     2
+#>  1          5.1         3.5          1.4     2
+#>  2          4.9         3.0          1.4     2
+#>  3          4.7         3.2          1.3     2
+#>  4          4.6         3.1          1.5     2
+#>  5          5.0         3.6          1.4     2
+#>  6          5.4         3.9          1.7     4
+#>  7          4.6         3.4          1.4     3
+#>  8          5.0         3.4          1.5     2
+#>  9          4.4         2.9          1.4     2
 #> 10          4.9         3.1          1.5     1
 #> # ... with 140 more rows
 #> 
@@ -177,7 +177,7 @@ We can chain unjoins together, but make sure not to repeat a `key_col` in one of
 ``` r
 unjoin(iris, Species, key_col = "vertex") %>% unjoin(Petal.Width, vertex,  key_col = "branch")
 #> $vertex
-#> # A tibble: 3 × 2
+#> # A tibble: 3 x 2
 #>      Species vertex
 #>       <fctr>  <int>
 #> 1     setosa      1
@@ -185,34 +185,34 @@ unjoin(iris, Species, key_col = "vertex") %>% unjoin(Petal.Width, vertex,  key_c
 #> 3  virginica      3
 #> 
 #> $branch
-#> # A tibble: 27 × 3
+#> # A tibble: 27 x 3
 #>    Petal.Width vertex branch
 #>          <dbl>  <int>  <int>
-#> 1          0.2      1      2
-#> 2          0.4      1      4
-#> 3          0.3      1      3
-#> 4          0.1      1      1
-#> 5          0.5      1      5
-#> 6          0.6      1      6
-#> 7          1.4      2     11
-#> 8          1.5      2     13
-#> 9          1.3      2     10
+#>  1         0.2      1      2
+#>  2         0.4      1      4
+#>  3         0.3      1      3
+#>  4         0.1      1      1
+#>  5         0.5      1      5
+#>  6         0.6      1      6
+#>  7         1.4      2     11
+#>  8         1.5      2     13
+#>  9         1.3      2     10
 #> 10         1.6      2     15
 #> # ... with 17 more rows
 #> 
 #> $data
-#> # A tibble: 150 × 4
+#> # A tibble: 150 x 4
 #>    Sepal.Length Sepal.Width Petal.Length branch
 #>           <dbl>       <dbl>        <dbl>  <int>
-#> 1           5.1         3.5          1.4      2
-#> 2           4.9         3.0          1.4      2
-#> 3           4.7         3.2          1.3      2
-#> 4           4.6         3.1          1.5      2
-#> 5           5.0         3.6          1.4      2
-#> 6           5.4         3.9          1.7      4
-#> 7           4.6         3.4          1.4      3
-#> 8           5.0         3.4          1.5      2
-#> 9           4.4         2.9          1.4      2
+#>  1          5.1         3.5          1.4      2
+#>  2          4.9         3.0          1.4      2
+#>  3          4.7         3.2          1.3      2
+#>  4          4.6         3.1          1.5      2
+#>  5          5.0         3.6          1.4      2
+#>  6          5.4         3.9          1.7      4
+#>  7          4.6         3.4          1.4      3
+#>  8          5.0         3.4          1.5      2
+#>  9          4.4         2.9          1.4      2
 #> 10          4.9         3.1          1.5      1
 #> # ... with 140 more rows
 #> 
