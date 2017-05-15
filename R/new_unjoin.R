@@ -44,6 +44,11 @@ unjoin <- function(data, ..., key_col = "idx0") UseMethod("unjoin")
 #' @export
 unjoin.data.frame <- function(data, ..., key_col = ".idx0") {
   data <- ungroup(data) %>% as_tibble()
+  if (!(utils::packageVersion("dplyr") > "0.5.0")) {
+    unjoin_cols <- unname(dplyr::select_vars(colnames(data), ...))
+    out <-  unjoin_(data, unjoin_cols, key_col = key_col)
+    return(out)
+  }
   main <- select(data, ...)
   data <- select(data, !!!rlang::syms(setdiff(names(data), names(main))))
   # return(list(out, data))
