@@ -14,3 +14,4 @@ Imports: dplyr (> 0.5.0), rlang, tibble
 Suggests: gapminder, tidyr,
     testthat,
     covr
+Remotes: tidyverse/dplyr
