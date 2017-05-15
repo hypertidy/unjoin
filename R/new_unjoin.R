@@ -63,7 +63,15 @@ unjoin.data.frame <- function(data, ..., key_col = ".idx0") {
 unjoin.unjoin <- function(data, ..., key_col = ".idx0") {
   in_name <- setdiff(names(data), "data")
   ## assume we get the output of unjoin (should be classed)
-  uj <- unjoin(data[["data"]], ..., key_col = key_col)
+  if (!(utils::packageVersion("dplyr") > "0.5.0")) {
+    unjoin_cols <- unname(dplyr::select_vars(colnames(data[["data"]]), ...))
+    uj <-  unjoin_(data[["data"]], unjoin_cols, key_col = key_col)
+
+  } else {
+    uj <- unjoin(data[["data"]], ..., key_col = key_col)
+
+  }
+
   data[[key_col]] <- uj[[key_col]]
   data[["data"]] <- uj[["data"]]
   structure(data[c(in_name, key_col, "data")], class = "unjoin")

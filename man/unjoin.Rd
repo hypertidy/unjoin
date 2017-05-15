@@ -8,6 +8,10 @@
 \alias{unjoin.unjoin}
 \alias{unjoin}
 \alias{unjoin_}
+\alias{unjoin}
+\alias{unjoin_.data.frame}
+\alias{unjoin}
+\alias{unjoin_.unjoin}
 \title{Split a table in two and remove repeated values.}
 \usage{
 unjoin(data, ..., key_col = "idx0")
@@ -17,6 +21,11 @@ unjoin(data, ..., key_col = "idx0")
 \method{unjoin}{unjoin}(data, ..., key_col = ".idx0")
 
 unjoin_(data, unjoin_cols = character(), key_col = ".idx0")
+
+\method{unjoin_}{data.frame}(data, unjoin_cols = character(),
+  key_col = ".idx0")
+
+\method{unjoin_}{unjoin}(data, unjoin_cols = character(), key_col = ".idx0")
 }
 \arguments{
 \item{data}{A data frame.}

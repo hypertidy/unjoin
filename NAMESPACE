@@ -2,6 +2,8 @@
 
 S3method(unjoin,data.frame)
 S3method(unjoin,unjoin)
+S3method(unjoin_,data.frame)
+S3method(unjoin_,unjoin)
 export(unjoin)
 export(unjoin_)
 importFrom(dplyr,"%>%")

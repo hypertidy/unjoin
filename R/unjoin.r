@@ -1,11 +1,23 @@
 #' @name unjoin
+#' @export
+unjoin_ <- function(data, unjoin_cols = character(), key_col = ".idx0") UseMethod("unjoin_")
+#' @name unjoin
 #' @param unjoin_cols character list of unjoin column names for `unjoin_` backwards compatibility
 #' @export
-unjoin_ <- function(data,  unjoin_cols = character(), key_col = ".idx0") {
+unjoin_.data.frame <- function(data,  unjoin_cols = character(), key_col = ".idx0") {
   group_cols <- setdiff(names(data), unjoin_cols)
   unjoin_impl(dplyr::as_data_frame(data), group_cols, unjoin_cols, key_col = key_col)
 }
+#' @name unjoin
+#' @export
+unjoin_.unjoin <- function(data,  unjoin_cols = character(), key_col = ".idx0") {
+  in_name <- setdiff(names(data), "data")
+  uj <-  unjoin_(data[["data"]], unjoin_cols, key_col = key_col)
 
+  data[[key_col]] <- uj[[key_col]]
+  data[["data"]] <- uj[["data"]]
+  structure(data[c(in_name, key_col, "data")], class = "unjoin")
+}
 
 #' @importFrom stats setNames
 #' @importFrom dplyr as_data_frame distinct_ group_indices ungroup select_ select_vars
