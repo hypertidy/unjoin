@@ -1,3 +1,8 @@
+## unjoin 0.0.3
+
+Added '()' after function names in the DESCRIPTION and removed on stray extra space
+after a period. 
+
 ## Test environments
 * ubuntu 14.04 (on travis-ci), R 3.4.1
 * win-builder (devel and release)

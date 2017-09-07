@@ -1,5 +1,8 @@
 # unjoin 0.0.3
 
+* added '()' after function names in the DESCRIPTION and removed on stray extra space
+after a period - thanks to CRAN for the feedback.  
+
 * restore unjoin_ for se
 
 * new tests
