@@ -1,6 +1,8 @@
+#' unjoin
+#'
 #' Split a table in two and remove repeated values.
 #'
-#' This is a S3 generic. The data frame on input is treated as "data", the new data frame is treated
+#' The data frame on input is treated as "data", the new data frame is treated
 #' as the normalized key. This means that the split-off and de-duplicated table has the name given via
 #' the `key_col` argument (defaults to ".idx0") and shares this name with the common key.
 #'

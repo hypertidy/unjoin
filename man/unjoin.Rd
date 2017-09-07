@@ -12,7 +12,7 @@
 \alias{unjoin_.data.frame}
 \alias{unjoin}
 \alias{unjoin_.unjoin}
-\title{Split a table in two and remove repeated values.}
+\title{unjoin}
 \usage{
 unjoin(data, ..., key_col = "idx0")
 
@@ -37,11 +37,13 @@ unjoin_(data, unjoin_cols = character(), key_col = ".idx0")
 \item{unjoin_cols}{character list of unjoin column names for `unjoin_` backwards compatibility}
 }
 \description{
-This is a S3 generic. The data frame on input is treated as "data", the new data frame is treated
-as the normalized key. This means that the split-off and de-duplicated table has the name given via
-the `key_col` argument (defaults to ".idx0") and shares this name with the common key.
+Split a table in two and remove repeated values.
 }
 \details{
+The data frame on input is treated as "data", the new data frame is treated
+as the normalized key. This means that the split-off and de-duplicated table has the name given via
+the `key_col` argument (defaults to ".idx0") and shares this name with the common key.
+
 It's not yet clear if this flexibility around naming is a good idea, but it enables a simple scheme for chaining
 unjoins, though you'd better not use the same `key_col` again.
 
