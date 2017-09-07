@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unjoin Data Frames  • unjoin</title>
+<title>Separate a Data Frame by Normalization • unjoin</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
@@ -29,13 +29,26 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
+  <a href="/index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li>
   <a href="news/index.html">News</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/hypertidy/unjoin">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -56,7 +69,7 @@
 <div id="unjoin" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#unjoin" class="anchor"></a>unjoin</h1></div>
-<p>The goal of unjoin is to provide <code>unjoin</code> for data frames. This is exactly part of what <code>tidyr::nest</code> does, but with two differences:</p>
+<p>The goal of unjoin is to provide <code>unjoin</code> for data frames. This is exactly part of what <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/nest">tidyr::nest</a></code> does, but with two differences:</p>
 <ul>
 <li>the split data frames are not nested, they are split and returned as two whole tibbles <code>main</code> and <code>data</code>
 </li>
@@ -65,9 +78,11 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install unjoin from github with:</p>
+<p>Install unjoin from CRAN:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"unjoin"</span>)</code></pre></div>
+<p>You can install the development unjoin from github with:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools::<span class="kw">install_github</span>(<span class="st">"mdsumner/unjoin"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"hypertidy/unjoin"</span>)</code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -75,7 +90,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"mdsumner/unjo
 <p>This is a basic example which shows you how to unjoin a data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(unjoin)
 
-<span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(iris)
+<span class="kw"><a href="http://www.rdocumentation.org/packages/unjoin/topics/unjoin">unjoin</a></span>(iris)
 <span class="co">#&gt; $.idx0</span>
 <span class="co">#&gt; # A tibble: 1 x 1</span>
 <span class="co">#&gt;   .idx0</span>
@@ -110,7 +125,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"mdsumner/unjo
 <span class="co">#&gt; The following objects are masked from 'package:base':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     intersect, setdiff, setequal, union</span>
-iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Species)
+iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/unjoin/topics/unjoin">unjoin</a></span>(Species)
 <span class="co">#&gt; $.idx0</span>
 <span class="co">#&gt; # A tibble: 3 x 2</span>
 <span class="co">#&gt;      Species .idx0</span>
@@ -138,7 +153,7 @@ iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.h
 <span class="co">#&gt; attr(,"class")</span>
 <span class="co">#&gt; [1] "unjoin"</span>
 
-iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Species, Petal.Width)
+iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/unjoin/topics/unjoin">unjoin</a></span>(Species, Petal.Width)
 <span class="co">#&gt; $.idx0</span>
 <span class="co">#&gt; # A tibble: 27 x 3</span>
 <span class="co">#&gt;       Species Petal.Width .idx0</span>
@@ -176,7 +191,7 @@ iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.h
 <p>This is used to build topological data structures, with a kind of inside-out version of a nested data frame. Whether it’s of broader use is unclear.</p>
 <p>There is a record here of some of the thinking that led to unjoin: <a href="https://github.com/r-gris/babelfish" class="uri">https://github.com/r-gris/babelfish</a></p>
 <p>The function <code>unjoin</code> replaces the method here: <a href="http://rpubs.com/cyclemumner/iout_nest" class="uri">http://rpubs.com/cyclemumner/iout_nest</a></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(d2 &lt;-<span class="st"> </span>iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Species, Petal.Width))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(d2 &lt;-<span class="st"> </span>iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/unjoin/topics/unjoin">unjoin</a></span>(Species, Petal.Width))
 <span class="co">#&gt; $.idx0</span>
 <span class="co">#&gt; # A tibble: 27 x 3</span>
 <span class="co">#&gt;       Species Petal.Width .idx0</span>
@@ -212,7 +227,7 @@ iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.h
 <span class="co">#&gt; attr(,"class")</span>
 <span class="co">#&gt; [1] "unjoin"</span></code></pre></div>
 <p>We can chain unjoins together, but make sure not to repeat a <code>key_col</code> in one of these.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(iris, Species, <span class="dt">key_col =</span> <span class="st">"vertex"</span>) %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Petal.Width, vertex,  <span class="dt">key_col =</span> <span class="st">"branch"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/unjoin/topics/unjoin">unjoin</a></span>(iris, Species, <span class="dt">key_col =</span> <span class="st">"vertex"</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/unjoin/topics/unjoin">unjoin</a></span>(Petal.Width, vertex,  <span class="dt">key_col =</span> <span class="st">"branch"</span>)
 <span class="co">#&gt; $vertex</span>
 <span class="co">#&gt; # A tibble: 3 x 2</span>
 <span class="co">#&gt;      Species vertex</span>
@@ -263,7 +278,15 @@ iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.h
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>License</h2>
+    <h2 class="hasAnchor">
+<a href="#sidebar" class="anchor"></a>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/hypertidy/unjoin">https://​github.com/​hypertidy/​unjoin</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/hypertidy/unjoin/issues">https://​github.com/​hypertidy/​unjoin/​issues</a>
+</li>
+</ul>
+<h2>License</h2>
 <p><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
@@ -272,9 +295,9 @@ iris %&gt;%<span class="st"> </span><span class="kw"><a href="reference/unjoin.h
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/mdsumner/unjoin"><img src="https://travis-ci.org/mdsumner/unjoin.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/mdsumner/unjoin"><img src="https://ci.appveyor.com/api/projects/status/github/mdsumner/unjoin?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
-<li><a href="https://codecov.io/github/mdsumner/unjoin?branch=master"><img src="https://img.shields.io/codecov/c/github/mdsumner/unjoin/master.svg" alt="Coverage Status"></a></li>
+<li><a href="https://travis-ci.org/hypertidy/unjoin"><img src="https://travis-ci.org/hypertidy/unjoin.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/hypertidy/unjoin"><img src="https://ci.appveyor.com/api/projects/status/github/hypertidy/unjoin?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
+<li><a href="https://codecov.io/github/hypertidy/unjoin?branch=master"><img src="https://img.shields.io/codecov/c/github/hypertidy/unjoin/master.svg" alt="Coverage Status"></a></li>
 </ul>
 </div>
 

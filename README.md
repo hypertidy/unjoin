@@ -1,6 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/mdsumner/unjoin.svg?branch=master)](https://travis-ci.org/mdsumner/unjoin) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mdsumner/unjoin?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/unjoin) [![Coverage Status](https://img.shields.io/codecov/c/github/mdsumner/unjoin/master.svg)](https://codecov.io/github/mdsumner/unjoin?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/hypertidy/unjoin.svg?branch=master)](https://travis-ci.org/hypertidy/unjoin) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hypertidy/unjoin?branch=master&svg=true)](https://ci.appveyor.com/project/hypertidy/unjoin) [![Coverage Status](https://img.shields.io/codecov/c/github/hypertidy/unjoin/master.svg)](https://codecov.io/github/hypertidy/unjoin?branch=master)
 
 unjoin
 ======
@@ -13,11 +13,17 @@ The goal of unjoin is to provide `unjoin` for data frames. This is exactly part 
 Installation
 ------------
 
-You can install unjoin from github with:
+Install unjoin from CRAN:
+
+``` r
+install.packages("unjoin")
+```
+
+You can install the development unjoin from github with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("mdsumner/unjoin")
+devtools::install_github("hypertidy/unjoin")
 ```
 
 Example

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Split a table in two and remove repeated values. — unjoin • unjoin</title>
+<title>unjoin — unjoin • unjoin</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -23,7 +23,8 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -51,6 +52,12 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -59,7 +66,12 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/hypertidy/unjoin">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -71,13 +83,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Split a table in two and remove repeated values.</h1>
+    <h1>unjoin</h1>
     </div>
 
     
-    <p>This is a S3 generic. The data frame on input is treated as "data", the new data frame is treated
-as the normalized key. This means that the split-off and de-duplicated table has the name given via
-the `key_col` argument (defaults to ".idx0") and shares this name with the common key.</p>
+    <p>Split a table in two and remove repeated values.</p>
     
 
     <pre class="usage"><span class='fu'>unjoin</span>(<span class='no'>data</span>, <span class='no'>...</span>, <span class='kw'>key_col</span> <span class='kw'>=</span> <span class='st'>"idx0"</span>)
@@ -120,7 +130,10 @@ the `key_col` argument (defaults to ".idx0") and shares this name with the commo
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>It's not yet clear if this flexibility around naming is a good idea, but it enables a simple scheme for chaining
+    <p>The data frame on input is treated as "data", the new data frame is treated
+as the normalized key. This means that the split-off and de-duplicated table has the name given via
+the `key_col` argument (defaults to ".idx0") and shares this name with the common key.</p>
+<p>It's not yet clear if this flexibility around naming is a good idea, but it enables a simple scheme for chaining
 unjoins, though you'd better not use the same `key_col` again.</p>
 <p>This is a subset of the tasks done by <code><a href='http://www.rdocumentation.org/packages/tidyr/topics/nest'>nest</a></code>.</p>
     
@@ -138,7 +151,7 @@ unjoins, though you'd better not use the same `key_col` again.</p>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'><span class='fu'>data</span>(<span class='st'>"Seatbelts"</span>, <span class='kw'>package</span><span class='kw'>=</span> <span class='st'>"datasets"</span>)
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>unjoin</span>(<span class='fu'>as.data.frame</span>(<span class='no'>Seatbelts</span>), <span class='no'>front</span>, <span class='no'>law</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>inner_join</span>(<span class='no'>x</span>$<span class='no'>.idx0</span>, <span class='no'>x</span>$<span class='no'>data</span>) <span class='kw'>%&gt;%</span> <span class='fu'>select</span>(-<span class='no'>.idx0</span>)</div><div class='output co'>#&gt; <span class='message'>Joining, by = ".idx0"</span></div><div class='input'><span class='fu'>all.equal</span>(<span class='no'>y</span>[<span class='fu'>colnames</span>(<span class='no'>Seatbelts</span>)], <span class='fu'>as.data.frame</span>(<span class='no'>Seatbelts</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/join.html'>inner_join</a></span>(<span class='no'>x</span>$<span class='no'>.idx0</span>, <span class='no'>x</span>$<span class='no'>data</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/select.html'>select</a></span>(-<span class='no'>.idx0</span>)</div><div class='output co'>#&gt; <span class='message'>Joining, by = ".idx0"</span></div><div class='input'><span class='fu'>all.equal</span>(<span class='no'>y</span>[<span class='fu'>colnames</span>(<span class='no'>Seatbelts</span>)], <span class='fu'>as.data.frame</span>(<span class='no'>Seatbelts</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='no'>iris</span> <span class='kw'>%&gt;%</span> <span class='fu'>unjoin</span>(-<span class='no'>Species</span>)</div><div class='output co'>#&gt; $.idx0
 #&gt; # A tibble: 149 x 5
 #&gt;    Sepal.Length Sepal.Width Petal.Length Petal.Width .idx0
@@ -208,7 +221,7 @@ unjoins, though you'd better not use the same `key_col` again.</p>
 #&gt; [1] "unjoin"</div><div class='input'>
 <span class='kw'>if</span> (<span class='fu'>require</span>(<span class='st'>"gapminder"</span>)) {
   <span class='no'>gapminder</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>group_by</span>(<span class='no'>country</span>, <span class='no'>continent</span>) <span class='kw'>%&gt;%</span>
+    <span class='fu'><a href='http://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span>(<span class='no'>country</span>, <span class='no'>continent</span>) <span class='kw'>%&gt;%</span>
     <span class='fu'>unjoin</span>()
 
   <span class='no'>gapminder</span> <span class='kw'>%&gt;%</span>
