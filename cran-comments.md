@@ -1,6 +1,6 @@
 ## unjoin 0.0.3
 
-Added '()' after function names in the DESCRIPTION and removed on stray extra space
+Added () after function names in the DESCRIPTION and removed  stray extra space
 after a period. 
 
 ## Test environments
