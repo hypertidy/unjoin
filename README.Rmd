@@ -11,10 +11,13 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
-[![Travis-CI Build Status](https://travis-ci.org/hypertidy/unjoin.svg?branch=master)](https://travis-ci.org/hypertidy/unjoin)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hypertidy/unjoin?branch=master&svg=true)](https://ci.appveyor.com/project/hypertidy/unjoin)
-[![Coverage Status](https://img.shields.io/codecov/c/github/hypertidy/unjoin/master.svg)](https://codecov.io/github/hypertidy/unjoin?branch=master)
 
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Travis-CI Build Status](https://travis-ci.org/hypertidy/unjoin.svg?branch=master)](https://travis-ci.org/hypertidy/unjoin)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mdsumner/unjoin?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/unjoin)
+[![Coverage Status](https://img.shields.io/codecov/c/github/hypertidy/unjoin/master.svg)](https://codecov.io/github/hypertidy/unjoin?branch=master)
+ [![CRAN status](https://www.r-pkg.org/badges/version/unjoin)](https://CRAN.R-project.org/package=unjoin)
+ 
 # unjoin
 
 The goal of unjoin is to provide `unjoin` for data frames. This is exactly part of what `tidyr::nest` does, but with two differences: 
@@ -70,6 +73,7 @@ unjoin(iris, Species, key_col = "vertex") %>% unjoin(Petal.Width, vertex,  key_c
 
 Also, there's no escape hatch here, you can't "unjoin" your way to normal nirvana, each unjoin needs to carry the last unjoin-key with it, and you just end up with the big link table with no attributes. It needs some kind of group-semantic to cut the chain. 
 
+---
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/hypertidy/unjoin/blob/master/CONDUCT.md). By participating in this project you agree to abide by its terms.
 

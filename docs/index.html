@@ -110,18 +110,18 @@
 <span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; $data</span></span>
 <span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; # A tibble: 150 x 6</span></span>
 <span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt;    Sepal.Length Sepal.Width Petal.Length Petal.Width Species .idx0</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt;           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;  &lt;fctr&gt; &lt;int&gt;</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt;  1          5.1         3.5          1.4         0.2  setosa     1</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt;  2          4.9         3.0          1.4         0.2  setosa     1</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt;  3          4.7         3.2          1.3         0.2  setosa     1</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt;  4          4.6         3.1          1.5         0.2  setosa     1</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt;  5          5.0         3.6          1.4         0.2  setosa     1</span></span>
-<span id="cb3-19"><a href="#cb3-19"></a><span class="co">#&gt;  6          5.4         3.9          1.7         0.4  setosa     1</span></span>
-<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt;  7          4.6         3.4          1.4         0.3  setosa     1</span></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt;  8          5.0         3.4          1.5         0.2  setosa     1</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#&gt;  9          4.4         2.9          1.4         0.2  setosa     1</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt; 10          4.9         3.1          1.5         0.1  setosa     1</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt; # ... with 140 more rows</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt;           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;   &lt;int&gt;</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt;  1          5.1         3.5          1.4         0.2 setosa      1</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt;  2          4.9         3            1.4         0.2 setosa      1</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt;  3          4.7         3.2          1.3         0.2 setosa      1</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt;  4          4.6         3.1          1.5         0.2 setosa      1</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt;  5          5           3.6          1.4         0.2 setosa      1</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co">#&gt;  6          5.4         3.9          1.7         0.4 setosa      1</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt;  7          4.6         3.4          1.4         0.3 setosa      1</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt;  8          5           3.4          1.5         0.2 setosa      1</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#&gt;  9          4.4         2.9          1.4         0.2 setosa      1</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt; 10          4.9         3.1          1.5         0.1 setosa      1</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt; # … with 140 more rows</span></span>
 <span id="cb3-25"><a href="#cb3-25"></a><span class="co">#&gt; </span></span>
 <span id="cb3-26"><a href="#cb3-26"></a><span class="co">#&gt; attr(,"class")</span></span>
 <span id="cb3-27"><a href="#cb3-27"></a><span class="co">#&gt; [1] "unjoin"</span></span>
@@ -138,27 +138,27 @@
 <span id="cb3-38"><a href="#cb3-38"></a>iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Species)</span>
 <span id="cb3-39"><a href="#cb3-39"></a><span class="co">#&gt; $.idx0</span></span>
 <span id="cb3-40"><a href="#cb3-40"></a><span class="co">#&gt; # A tibble: 3 x 2</span></span>
-<span id="cb3-41"><a href="#cb3-41"></a><span class="co">#&gt;      Species .idx0</span></span>
-<span id="cb3-42"><a href="#cb3-42"></a><span class="co">#&gt;       &lt;fctr&gt; &lt;int&gt;</span></span>
-<span id="cb3-43"><a href="#cb3-43"></a><span class="co">#&gt; 1     setosa     1</span></span>
+<span id="cb3-41"><a href="#cb3-41"></a><span class="co">#&gt;   Species    .idx0</span></span>
+<span id="cb3-42"><a href="#cb3-42"></a><span class="co">#&gt;   &lt;fct&gt;      &lt;int&gt;</span></span>
+<span id="cb3-43"><a href="#cb3-43"></a><span class="co">#&gt; 1 setosa         1</span></span>
 <span id="cb3-44"><a href="#cb3-44"></a><span class="co">#&gt; 2 versicolor     2</span></span>
-<span id="cb3-45"><a href="#cb3-45"></a><span class="co">#&gt; 3  virginica     3</span></span>
+<span id="cb3-45"><a href="#cb3-45"></a><span class="co">#&gt; 3 virginica      3</span></span>
 <span id="cb3-46"><a href="#cb3-46"></a><span class="co">#&gt; </span></span>
 <span id="cb3-47"><a href="#cb3-47"></a><span class="co">#&gt; $data</span></span>
 <span id="cb3-48"><a href="#cb3-48"></a><span class="co">#&gt; # A tibble: 150 x 5</span></span>
 <span id="cb3-49"><a href="#cb3-49"></a><span class="co">#&gt;    Sepal.Length Sepal.Width Petal.Length Petal.Width .idx0</span></span>
 <span id="cb3-50"><a href="#cb3-50"></a><span class="co">#&gt;           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;int&gt;</span></span>
 <span id="cb3-51"><a href="#cb3-51"></a><span class="co">#&gt;  1          5.1         3.5          1.4         0.2     1</span></span>
-<span id="cb3-52"><a href="#cb3-52"></a><span class="co">#&gt;  2          4.9         3.0          1.4         0.2     1</span></span>
+<span id="cb3-52"><a href="#cb3-52"></a><span class="co">#&gt;  2          4.9         3            1.4         0.2     1</span></span>
 <span id="cb3-53"><a href="#cb3-53"></a><span class="co">#&gt;  3          4.7         3.2          1.3         0.2     1</span></span>
 <span id="cb3-54"><a href="#cb3-54"></a><span class="co">#&gt;  4          4.6         3.1          1.5         0.2     1</span></span>
-<span id="cb3-55"><a href="#cb3-55"></a><span class="co">#&gt;  5          5.0         3.6          1.4         0.2     1</span></span>
+<span id="cb3-55"><a href="#cb3-55"></a><span class="co">#&gt;  5          5           3.6          1.4         0.2     1</span></span>
 <span id="cb3-56"><a href="#cb3-56"></a><span class="co">#&gt;  6          5.4         3.9          1.7         0.4     1</span></span>
 <span id="cb3-57"><a href="#cb3-57"></a><span class="co">#&gt;  7          4.6         3.4          1.4         0.3     1</span></span>
-<span id="cb3-58"><a href="#cb3-58"></a><span class="co">#&gt;  8          5.0         3.4          1.5         0.2     1</span></span>
+<span id="cb3-58"><a href="#cb3-58"></a><span class="co">#&gt;  8          5           3.4          1.5         0.2     1</span></span>
 <span id="cb3-59"><a href="#cb3-59"></a><span class="co">#&gt;  9          4.4         2.9          1.4         0.2     1</span></span>
 <span id="cb3-60"><a href="#cb3-60"></a><span class="co">#&gt; 10          4.9         3.1          1.5         0.1     1</span></span>
-<span id="cb3-61"><a href="#cb3-61"></a><span class="co">#&gt; # ... with 140 more rows</span></span>
+<span id="cb3-61"><a href="#cb3-61"></a><span class="co">#&gt; # … with 140 more rows</span></span>
 <span id="cb3-62"><a href="#cb3-62"></a><span class="co">#&gt; </span></span>
 <span id="cb3-63"><a href="#cb3-63"></a><span class="co">#&gt; attr(,"class")</span></span>
 <span id="cb3-64"><a href="#cb3-64"></a><span class="co">#&gt; [1] "unjoin"</span></span>
@@ -166,35 +166,35 @@
 <span id="cb3-66"><a href="#cb3-66"></a>iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Species, Petal.Width)</span>
 <span id="cb3-67"><a href="#cb3-67"></a><span class="co">#&gt; $.idx0</span></span>
 <span id="cb3-68"><a href="#cb3-68"></a><span class="co">#&gt; # A tibble: 27 x 3</span></span>
-<span id="cb3-69"><a href="#cb3-69"></a><span class="co">#&gt;       Species Petal.Width .idx0</span></span>
-<span id="cb3-70"><a href="#cb3-70"></a><span class="co">#&gt;        &lt;fctr&gt;       &lt;dbl&gt; &lt;int&gt;</span></span>
-<span id="cb3-71"><a href="#cb3-71"></a><span class="co">#&gt;  1     setosa         0.2     2</span></span>
-<span id="cb3-72"><a href="#cb3-72"></a><span class="co">#&gt;  2     setosa         0.4     4</span></span>
-<span id="cb3-73"><a href="#cb3-73"></a><span class="co">#&gt;  3     setosa         0.3     3</span></span>
-<span id="cb3-74"><a href="#cb3-74"></a><span class="co">#&gt;  4     setosa         0.1     1</span></span>
-<span id="cb3-75"><a href="#cb3-75"></a><span class="co">#&gt;  5     setosa         0.5     5</span></span>
-<span id="cb3-76"><a href="#cb3-76"></a><span class="co">#&gt;  6     setosa         0.6     6</span></span>
+<span id="cb3-69"><a href="#cb3-69"></a><span class="co">#&gt;    Species    Petal.Width .idx0</span></span>
+<span id="cb3-70"><a href="#cb3-70"></a><span class="co">#&gt;    &lt;fct&gt;            &lt;dbl&gt; &lt;int&gt;</span></span>
+<span id="cb3-71"><a href="#cb3-71"></a><span class="co">#&gt;  1 setosa             0.2     2</span></span>
+<span id="cb3-72"><a href="#cb3-72"></a><span class="co">#&gt;  2 setosa             0.4     4</span></span>
+<span id="cb3-73"><a href="#cb3-73"></a><span class="co">#&gt;  3 setosa             0.3     3</span></span>
+<span id="cb3-74"><a href="#cb3-74"></a><span class="co">#&gt;  4 setosa             0.1     1</span></span>
+<span id="cb3-75"><a href="#cb3-75"></a><span class="co">#&gt;  5 setosa             0.5     5</span></span>
+<span id="cb3-76"><a href="#cb3-76"></a><span class="co">#&gt;  6 setosa             0.6     6</span></span>
 <span id="cb3-77"><a href="#cb3-77"></a><span class="co">#&gt;  7 versicolor         1.4    11</span></span>
 <span id="cb3-78"><a href="#cb3-78"></a><span class="co">#&gt;  8 versicolor         1.5    12</span></span>
 <span id="cb3-79"><a href="#cb3-79"></a><span class="co">#&gt;  9 versicolor         1.3    10</span></span>
 <span id="cb3-80"><a href="#cb3-80"></a><span class="co">#&gt; 10 versicolor         1.6    13</span></span>
-<span id="cb3-81"><a href="#cb3-81"></a><span class="co">#&gt; # ... with 17 more rows</span></span>
+<span id="cb3-81"><a href="#cb3-81"></a><span class="co">#&gt; # … with 17 more rows</span></span>
 <span id="cb3-82"><a href="#cb3-82"></a><span class="co">#&gt; </span></span>
 <span id="cb3-83"><a href="#cb3-83"></a><span class="co">#&gt; $data</span></span>
 <span id="cb3-84"><a href="#cb3-84"></a><span class="co">#&gt; # A tibble: 150 x 4</span></span>
 <span id="cb3-85"><a href="#cb3-85"></a><span class="co">#&gt;    Sepal.Length Sepal.Width Petal.Length .idx0</span></span>
 <span id="cb3-86"><a href="#cb3-86"></a><span class="co">#&gt;           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt; &lt;int&gt;</span></span>
 <span id="cb3-87"><a href="#cb3-87"></a><span class="co">#&gt;  1          5.1         3.5          1.4     2</span></span>
-<span id="cb3-88"><a href="#cb3-88"></a><span class="co">#&gt;  2          4.9         3.0          1.4     2</span></span>
+<span id="cb3-88"><a href="#cb3-88"></a><span class="co">#&gt;  2          4.9         3            1.4     2</span></span>
 <span id="cb3-89"><a href="#cb3-89"></a><span class="co">#&gt;  3          4.7         3.2          1.3     2</span></span>
 <span id="cb3-90"><a href="#cb3-90"></a><span class="co">#&gt;  4          4.6         3.1          1.5     2</span></span>
-<span id="cb3-91"><a href="#cb3-91"></a><span class="co">#&gt;  5          5.0         3.6          1.4     2</span></span>
+<span id="cb3-91"><a href="#cb3-91"></a><span class="co">#&gt;  5          5           3.6          1.4     2</span></span>
 <span id="cb3-92"><a href="#cb3-92"></a><span class="co">#&gt;  6          5.4         3.9          1.7     4</span></span>
 <span id="cb3-93"><a href="#cb3-93"></a><span class="co">#&gt;  7          4.6         3.4          1.4     3</span></span>
-<span id="cb3-94"><a href="#cb3-94"></a><span class="co">#&gt;  8          5.0         3.4          1.5     2</span></span>
+<span id="cb3-94"><a href="#cb3-94"></a><span class="co">#&gt;  8          5           3.4          1.5     2</span></span>
 <span id="cb3-95"><a href="#cb3-95"></a><span class="co">#&gt;  9          4.4         2.9          1.4     2</span></span>
 <span id="cb3-96"><a href="#cb3-96"></a><span class="co">#&gt; 10          4.9         3.1          1.5     1</span></span>
-<span id="cb3-97"><a href="#cb3-97"></a><span class="co">#&gt; # ... with 140 more rows</span></span>
+<span id="cb3-97"><a href="#cb3-97"></a><span class="co">#&gt; # … with 140 more rows</span></span>
 <span id="cb3-98"><a href="#cb3-98"></a><span class="co">#&gt; </span></span>
 <span id="cb3-99"><a href="#cb3-99"></a><span class="co">#&gt; attr(,"class")</span></span>
 <span id="cb3-100"><a href="#cb3-100"></a><span class="co">#&gt; [1] "unjoin"</span></span></code></pre></div>
@@ -204,35 +204,35 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>(d2 &lt;-<span class="st"> </span>iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Species, Petal.Width))</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt; $.idx0</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; # A tibble: 27 x 3</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#&gt;       Species Petal.Width .idx0</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt;        &lt;fctr&gt;       &lt;dbl&gt; &lt;int&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt;  1     setosa         0.2     2</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt;  2     setosa         0.4     4</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt;  3     setosa         0.3     3</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt;  4     setosa         0.1     1</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt;  5     setosa         0.5     5</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;  6     setosa         0.6     6</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#&gt;    Species    Petal.Width .idx0</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt;    &lt;fct&gt;            &lt;dbl&gt; &lt;int&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt;  1 setosa             0.2     2</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt;  2 setosa             0.4     4</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt;  3 setosa             0.3     3</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt;  4 setosa             0.1     1</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt;  5 setosa             0.5     5</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;  6 setosa             0.6     6</span></span>
 <span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt;  7 versicolor         1.4    11</span></span>
 <span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt;  8 versicolor         1.5    12</span></span>
 <span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt;  9 versicolor         1.3    10</span></span>
 <span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; 10 versicolor         1.6    13</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; # ... with 17 more rows</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; # … with 17 more rows</span></span>
 <span id="cb4-17"><a href="#cb4-17"></a><span class="co">#&gt; </span></span>
 <span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; $data</span></span>
 <span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; # A tibble: 150 x 4</span></span>
 <span id="cb4-20"><a href="#cb4-20"></a><span class="co">#&gt;    Sepal.Length Sepal.Width Petal.Length .idx0</span></span>
 <span id="cb4-21"><a href="#cb4-21"></a><span class="co">#&gt;           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt; &lt;int&gt;</span></span>
 <span id="cb4-22"><a href="#cb4-22"></a><span class="co">#&gt;  1          5.1         3.5          1.4     2</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="co">#&gt;  2          4.9         3.0          1.4     2</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="co">#&gt;  2          4.9         3            1.4     2</span></span>
 <span id="cb4-24"><a href="#cb4-24"></a><span class="co">#&gt;  3          4.7         3.2          1.3     2</span></span>
 <span id="cb4-25"><a href="#cb4-25"></a><span class="co">#&gt;  4          4.6         3.1          1.5     2</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a><span class="co">#&gt;  5          5.0         3.6          1.4     2</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="co">#&gt;  5          5           3.6          1.4     2</span></span>
 <span id="cb4-27"><a href="#cb4-27"></a><span class="co">#&gt;  6          5.4         3.9          1.7     4</span></span>
 <span id="cb4-28"><a href="#cb4-28"></a><span class="co">#&gt;  7          4.6         3.4          1.4     3</span></span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="co">#&gt;  8          5.0         3.4          1.5     2</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="co">#&gt;  8          5           3.4          1.5     2</span></span>
 <span id="cb4-30"><a href="#cb4-30"></a><span class="co">#&gt;  9          4.4         2.9          1.4     2</span></span>
 <span id="cb4-31"><a href="#cb4-31"></a><span class="co">#&gt; 10          4.9         3.1          1.5     1</span></span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="co">#&gt; # ... with 140 more rows</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a><span class="co">#&gt; # … with 140 more rows</span></span>
 <span id="cb4-33"><a href="#cb4-33"></a><span class="co">#&gt; </span></span>
 <span id="cb4-34"><a href="#cb4-34"></a><span class="co">#&gt; attr(,"class")</span></span>
 <span id="cb4-35"><a href="#cb4-35"></a><span class="co">#&gt; [1] "unjoin"</span></span></code></pre></div>
@@ -240,11 +240,11 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(iris, Species, <span class="dt">key_col =</span> <span class="st">"vertex"</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/unjoin.html">unjoin</a></span>(Petal.Width, vertex,  <span class="dt">key_col =</span> <span class="st">"branch"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt; $vertex</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt; # A tibble: 3 x 2</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt;      Species vertex</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;       &lt;fctr&gt;  &lt;int&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt; 1     setosa      1</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt;   Species    vertex</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;   &lt;fct&gt;       &lt;int&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt; 1 setosa          1</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; 2 versicolor      2</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt; 3  virginica      3</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt; 3 virginica       3</span></span>
 <span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; </span></span>
 <span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt; $branch</span></span>
 <span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt; # A tibble: 27 x 3</span></span>
@@ -260,28 +260,29 @@
 <span id="cb5-21"><a href="#cb5-21"></a><span class="co">#&gt;  8         1.5      2     13</span></span>
 <span id="cb5-22"><a href="#cb5-22"></a><span class="co">#&gt;  9         1.3      2     10</span></span>
 <span id="cb5-23"><a href="#cb5-23"></a><span class="co">#&gt; 10         1.6      2     15</span></span>
-<span id="cb5-24"><a href="#cb5-24"></a><span class="co">#&gt; # ... with 17 more rows</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="co">#&gt; # … with 17 more rows</span></span>
 <span id="cb5-25"><a href="#cb5-25"></a><span class="co">#&gt; </span></span>
 <span id="cb5-26"><a href="#cb5-26"></a><span class="co">#&gt; $data</span></span>
 <span id="cb5-27"><a href="#cb5-27"></a><span class="co">#&gt; # A tibble: 150 x 4</span></span>
 <span id="cb5-28"><a href="#cb5-28"></a><span class="co">#&gt;    Sepal.Length Sepal.Width Petal.Length branch</span></span>
 <span id="cb5-29"><a href="#cb5-29"></a><span class="co">#&gt;           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;  &lt;int&gt;</span></span>
 <span id="cb5-30"><a href="#cb5-30"></a><span class="co">#&gt;  1          5.1         3.5          1.4      2</span></span>
-<span id="cb5-31"><a href="#cb5-31"></a><span class="co">#&gt;  2          4.9         3.0          1.4      2</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="co">#&gt;  2          4.9         3            1.4      2</span></span>
 <span id="cb5-32"><a href="#cb5-32"></a><span class="co">#&gt;  3          4.7         3.2          1.3      2</span></span>
 <span id="cb5-33"><a href="#cb5-33"></a><span class="co">#&gt;  4          4.6         3.1          1.5      2</span></span>
-<span id="cb5-34"><a href="#cb5-34"></a><span class="co">#&gt;  5          5.0         3.6          1.4      2</span></span>
+<span id="cb5-34"><a href="#cb5-34"></a><span class="co">#&gt;  5          5           3.6          1.4      2</span></span>
 <span id="cb5-35"><a href="#cb5-35"></a><span class="co">#&gt;  6          5.4         3.9          1.7      4</span></span>
 <span id="cb5-36"><a href="#cb5-36"></a><span class="co">#&gt;  7          4.6         3.4          1.4      3</span></span>
-<span id="cb5-37"><a href="#cb5-37"></a><span class="co">#&gt;  8          5.0         3.4          1.5      2</span></span>
+<span id="cb5-37"><a href="#cb5-37"></a><span class="co">#&gt;  8          5           3.4          1.5      2</span></span>
 <span id="cb5-38"><a href="#cb5-38"></a><span class="co">#&gt;  9          4.4         2.9          1.4      2</span></span>
 <span id="cb5-39"><a href="#cb5-39"></a><span class="co">#&gt; 10          4.9         3.1          1.5      1</span></span>
-<span id="cb5-40"><a href="#cb5-40"></a><span class="co">#&gt; # ... with 140 more rows</span></span>
+<span id="cb5-40"><a href="#cb5-40"></a><span class="co">#&gt; # … with 140 more rows</span></span>
 <span id="cb5-41"><a href="#cb5-41"></a><span class="co">#&gt; </span></span>
 <span id="cb5-42"><a href="#cb5-42"></a><span class="co">#&gt; attr(,"class")</span></span>
 <span id="cb5-43"><a href="#cb5-43"></a><span class="co">#&gt; [1] "unjoin"</span></span></code></pre></div>
 <p>Also, there’s no escape hatch here, you can’t “unjoin” your way to normal nirvana, each unjoin needs to carry the last unjoin-key with it, and you just end up with the big link table with no attributes. It needs some kind of group-semantic to cut the chain.</p>
-<p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+<hr>
+<p>Please note that this project is released with a <a href="https://github.com/hypertidy/unjoin/blob/master/CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
 </div>
 
@@ -316,9 +317,11 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://travis-ci.org/hypertidy/unjoin"><img src="https://travis-ci.org/hypertidy/unjoin.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/hypertidy/unjoin"><img src="https://ci.appveyor.com/api/projects/status/github/hypertidy/unjoin?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/mdsumner/unjoin"><img src="https://ci.appveyor.com/api/projects/status/github/mdsumner/unjoin?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://codecov.io/github/hypertidy/unjoin?branch=master"><img src="https://img.shields.io/codecov/c/github/hypertidy/unjoin/master.svg" alt="Coverage Status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=unjoin"><img src="https://www.r-pkg.org/badges/version/unjoin" alt="CRAN status"></a></li>
 </ul>
 </div>
 </div>
