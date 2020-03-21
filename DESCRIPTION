@@ -1,6 +1,6 @@
 Package: unjoin
 Title: Separate a Data Frame by Normalization
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(person("Michael D.","Sumner", role = c("aut", "cre"), email = "mdsumner@gmail.com"), 
              person("Simon", "Wotherspoon", role = "ctb"),
              person("Hadley", "Wickham", role = "ctb", comment = "named the concept, provided excellent guidance via tidyr source code"))
@@ -14,12 +14,14 @@ Depends: R (>= 3.3.2)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0
 Imports: dplyr, rlang, tibble
 Suggests:
-    gapminder, 
+    gapminder,
     tidyr,
     testthat,
-    covr
+    covr,
+    spelling
 URL: https://github.com/hypertidy/unjoin
 BugReports: https://github.com/hypertidy/unjoin/issues
+Language: en-US

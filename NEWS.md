@@ -1,3 +1,9 @@
+# unjoin 0.0.4
+
+* Removed old use of 'as_data_frame'. 
+
+
+
 # unjoin 0.0.3
 
 * added () after function names in the DESCRIPTION and removed on stray extra space

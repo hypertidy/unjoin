@@ -6,7 +6,7 @@ unjoin_ <- function(data, unjoin_cols = character(), key_col = ".idx0") UseMetho
 #' @export
 unjoin_.data.frame <- function(data,  unjoin_cols = character(), key_col = ".idx0") {
   group_cols <- setdiff(names(data), unjoin_cols)
-  unjoin_impl(dplyr::as_data_frame(data), group_cols, unjoin_cols, key_col = key_col)
+  unjoin_impl(tibble::as_tibble(data), group_cols, unjoin_cols, key_col = key_col)
 }
 #' @name unjoin
 #' @export
@@ -20,8 +20,7 @@ unjoin_.unjoin <- function(data,  unjoin_cols = character(), key_col = ".idx0") 
 }
 
 #' @importFrom stats setNames
-#' @importFrom dplyr as_data_frame distinct_ group_indices ungroup select_ select_vars
-#' @importFrom tibble data_frame as_tibble
+#' @importFrom tibble as_tibble
 unjoin_impl <- function(data, group_cols, unjoin_cols, key_col = ".idx0") {
   stopifnot(length(key_col) == 1L)
   data <- dplyr::ungroup(data)
