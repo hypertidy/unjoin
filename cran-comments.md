@@ -1,9 +1,9 @@
-## unjoin 0.0.4
+## unjoin 0.1.0
 
-Simple release to remove old dplyr usage. 
+New release for dplyr 1.0.0. 
 
 ## Test environments
-* ubuntu 14.04 (on travis-ci), R 3.6.3
+* ubuntu 18.04 (on travis-ci), R 3.6.3
 * win-builder (devel and release)
 
 ## R CMD check results
@@ -12,4 +12,4 @@ Simple release to remove old dplyr usage.
 
 ## Reverse dependencies
 
-The single dep 'silicate' passed check under this version. 
+The dependencies 'anglr' and 'silicate' passed check under this version. 

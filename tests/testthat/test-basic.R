@@ -39,14 +39,3 @@ test_that("key col works", {
 })
 
 
-test_that("nse-compat works", {
-   expect_named(unjoin_(iris, "Sepal.Length"), c(".idx0", "data"))
-})
-
-test_that("unholy mixes of compatibility are ok", {
-  iris %>% unjoin() %>% unjoin_("Species", key_col = "aaa") %>% expect_silent()
-
-  unjoin(iris) %>% unjoin(Sepal.Width, key_col = "www") %>% unjoin(Petal.Width) %>% expect_silent()
-
-  unjoin(iris) %>% unjoin(Petal.Width, key_col = "iii") %>% unjoin_("Species", key_col = "aaa") %>% expect_silent()
-})
