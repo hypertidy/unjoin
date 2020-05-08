@@ -1,7 +1,11 @@
+# unjoin 0.1.0
+
+* Removed old dplyr. 
+
+
 # unjoin 0.0.4
 
 * Removed old use of 'as_data_frame'. 
-
 
 
 # unjoin 0.0.3
