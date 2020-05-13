@@ -10,15 +10,17 @@
 |collate  |en_AU.UTF-8                  |
 |ctype    |en_AU.UTF-8                  |
 |tz       |Australia/Hobart             |
-|date     |2020-05-09                   |
+|date     |2020-05-13                   |
 
 # Dependencies
 
-|package |old   |new   |Δ  |
-|:-------|:-----|:-----|:--|
-|unjoin  |0.0.4 |0.1.0 |*  |
-|pillar  |NA    |1.4.4 |*  |
-|rlang   |NA    |0.4.6 |*  |
+|package    |old   |new   |Δ  |
+|:----------|:-----|:-----|:--|
+|unjoin     |0.0.4 |0.1.0 |*  |
+|pillar     |NA    |1.4.4 |*  |
+|rlang      |NA    |0.4.6 |*  |
+|tidyselect |NA    |1.1.0 |*  |
+|vctrs      |NA    |0.3.0 |*  |
 
 # Revdeps
 
